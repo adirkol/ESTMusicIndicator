@@ -29,13 +29,13 @@ class ESTMusicIndicatorContentView: UIView {
     
     public var kBarCount = 10
     public var kBarWidth:CGFloat = 10.0
-    public var kBarIdleHeight:CGFloat = 40.0
+    public var kBarIdleHeight:CGFloat = 70.0
     private let kHorizontalBarSpacing:CGFloat = 8.0 // Measured on iPad 2 (non-Retina)
     private let kRetinaHorizontalBarSpacing:CGFloat = 6 // Measured on iPhone 5s (Retina)
-    private let kBarMinPeakHeight:CGFloat = 20.0
-    private let kBarMaxPeakHeight:CGFloat = 40.0
-    private let kMinBaseOscillationPeriod = CFTimeInterval(0.2)
-    private let kMaxBaseOscillationPeriod = CFTimeInterval(0.8)
+    private let kBarMinPeakHeight:CGFloat = 10.0
+    private let kBarMaxPeakHeight:CGFloat = 80.0
+    private let kMinBaseOscillationPeriod = CFTimeInterval(0.3)
+    private let kMaxBaseOscillationPeriod = CFTimeInterval(0.7)
     private let kOscillationAnimationKey:String = "oscillation"
     private let kDecayDuration = CFTimeInterval(0.3)
     private let kDecayAnimationKey:String = "decay"
@@ -74,7 +74,12 @@ class ESTMusicIndicatorContentView: UIView {
         let layer: CALayer = CALayer()
         layer.anchorPoint = CGPoint(x: 0.0, y: 1.0) // At the bottom-left corner
         layer.position = CGPoint(x: xOffset, y: kBarMaxPeakHeight) // In superview's coordinate
-        layer.bounds = CGRect(x: 0.0, y: 0.0, width: kBarWidth, height: (CGFloat(layerIndex) * kBarMaxPeakHeight/CGFloat(kBarCount))) // In its own coordinate }
+//        let height = (CGFloat(layerIndex) * kBarMaxPeakHeight/CGFloat(kBarCount))
+//        let width = kBarWidth
+        let height = 10.0
+        let width = 10.0
+        layer.bounds = CGRect(x: 0.0, y: 0.0, width: width, height: height) // In its own coordinate }
+        layer.cornerRadius = kBarWidth / 2
         return layer
     }
     
@@ -184,7 +189,9 @@ class ESTMusicIndicatorContentView: UIView {
         let animation: CABasicAnimation = CABasicAnimation(keyPath: "bounds")
         
         if let presentation = layer.presentation() {
-            animation.fromValue = NSValue(cgRect:CALayer(layer: presentation).bounds)
+            print("fromValue: \(presentation.bounds)")
+//            animation.fromValue = NSValue(cgRect:CALayer(layer: presentation).bounds)
+            animation.fromValue = presentation.bounds
         }
         animation.toValue = NSValue(cgRect:layer.bounds)
         animation.duration = kDecayDuration
