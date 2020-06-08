@@ -251,6 +251,7 @@
 				TargetAttributes = {
 					564E7FE71C14624500353CC0 = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = 2V3RZZH6JH;
 						LastSwiftMigration = 0940;
 					};
 					564E7FFB1C14624500353CC0 = {
@@ -270,6 +271,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -475,6 +477,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2V3RZZH6JH;
 				INFOPLIST_FILE = ESTMusicIndicator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -489,6 +492,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2V3RZZH6JH;
 				INFOPLIST_FILE = ESTMusicIndicator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

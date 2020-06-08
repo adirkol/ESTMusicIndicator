@@ -30,10 +30,14 @@ class MusicListViewController: UITableViewController, UIGestureRecognizerDelegat
     
     func createIndicatorView() {
         let screenSize: CGRect = UIScreen.main.bounds
-        indicatorView = ESTMusicIndicatorView.init(frame: CGRect(origin: CGPoint(x: (screenSize.width - 50), y: 0), size: CGSize(width: 50, height: 44)))
+//        indicatorView = ESTMusicIndicatorView.init(frame: CGRect(origin: CGPoint(x: (screenSize.width - 100), y: 0), size: CGSize(width: 100, height: 88)))
+        indicatorView = ESTMusicIndicatorView.init(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
         indicatorView.hidesWhenStopped = false
-        indicatorView.tintColor = UIColor.red
-        navigationController?.navigationBar.addSubview(indicatorView)
+        indicatorView.tintColor = .cyan
+        indicatorView.barHeight = 50
+        indicatorView.sizeToFit()
+//        navigationController?.navigationBar.addSubview(indicatorView)
+        view.addSubview(indicatorView)
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(MusicListViewController.didTapIndicator(_:)))
         tap.delegate = self

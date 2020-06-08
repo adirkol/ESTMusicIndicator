@@ -27,14 +27,14 @@ import UIKit
 
 class ESTMusicIndicatorContentView: UIView {
     
-    private let kBarCount = 3
-    private let kBarWidth:CGFloat = 3.0
-    private let kBarIdleHeight:CGFloat = 3.0
-    private let kHorizontalBarSpacing:CGFloat = 2.0 // Measured on iPad 2 (non-Retina)
-    private let kRetinaHorizontalBarSpacing:CGFloat = 1.5 // Measured on iPhone 5s (Retina)
-    private let kBarMinPeakHeight:CGFloat = 6.0
-    private let kBarMaxPeakHeight:CGFloat = 12.0
-    private let kMinBaseOscillationPeriod = CFTimeInterval(0.6)
+    public var kBarCount = 10
+    public var kBarWidth:CGFloat = 10.0
+    public var kBarIdleHeight:CGFloat = 40.0
+    private let kHorizontalBarSpacing:CGFloat = 8.0 // Measured on iPad 2 (non-Retina)
+    private let kRetinaHorizontalBarSpacing:CGFloat = 6 // Measured on iPhone 5s (Retina)
+    private let kBarMinPeakHeight:CGFloat = 20.0
+    private let kBarMaxPeakHeight:CGFloat = 40.0
+    private let kMinBaseOscillationPeriod = CFTimeInterval(0.2)
     private let kMaxBaseOscillationPeriod = CFTimeInterval(0.8)
     private let kOscillationAnimationKey:String = "oscillation"
     private let kDecayDuration = CFTimeInterval(0.3)

@@ -75,6 +75,13 @@ open class ESTMusicIndicatorView: UIView {
         }
     }
     
+    open var barHeight: Int = 10 {
+        didSet {
+            self.contentView.backgroundColor = .red
+            self.contentView.kBarCount = barHeight
+        }
+    }
+    
     /**
      The current state of the receiver.
      
